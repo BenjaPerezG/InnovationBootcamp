@@ -10,6 +10,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
+                android:name=".timer"
+                android:label="@string/title_activity_timer"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
                 android:name=".choose"
                 android:label="@string/title_activity_choose"
                 android:theme="@style/AppTheme.NoActionBar">
