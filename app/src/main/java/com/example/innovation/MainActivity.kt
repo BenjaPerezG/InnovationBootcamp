@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
             override fun onFinish() {
                 timerText.text = "done!"
             }
-        }.start()
+        }
+        startTimerButton.setOnClickListener {  }
 
     }
 }
