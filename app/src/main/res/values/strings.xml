@@ -2,4 +2,6 @@
     <string name="app_name">Innovation</string>
     <string name="CG_logo">Clean n\' Green</string>
     <string name="connect_button">Connect</string>
+    <string name="title_activity_choose">choose</string>
+    <string name="choose_title">Choose your time!</string>
 </resources>
