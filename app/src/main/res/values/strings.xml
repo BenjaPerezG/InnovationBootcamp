@@ -2,6 +2,16 @@
     <string name="app_name">Innovation</string>
     <string name="CG_logo">Clean n\' Green</string>
     <string name="connect_button">Connect</string>
+    <string name="title_activity_choose">choose</string>
+    <string name="choose_title">Choose your time!</string>
+    <string name="title_activity_timer">timer</string>
+    <string name="time_remaining_text">Time remaining:</string>
+    <string name="ready">I\'m Ready</string>
+    <string name="three">3 minutes</string>
+    <string name="five">5 minutes</string>
+    <string name="ten">10 minutes</string>
+    <string name="fifteen">15 minutes</string>
+    <string name="five_save">Save X Litters</string>
     <string name="settings_preferences">Settings</string>
     <string name="timer_preferences">Timer</string>
 </resources>
