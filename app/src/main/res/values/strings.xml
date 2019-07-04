@@ -14,4 +14,5 @@
     <string name="five_save">Save X Litters</string>
     <string name="settings_preferences">Settings</string>
     <string name="timer_preferences">Timer</string>
+    <string name="average_preferences">Average</string>
 </resources>

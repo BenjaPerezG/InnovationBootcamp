@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
+import android.text.Editable
 import android.widget.Toast
 /*import com.google.android.material.snackbar.Snackbar*/
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,15 +45,18 @@ class choose : AppCompatActivity() {
         title = "Clean n' Green"
         val timerIntent = Intent(applicationContext, timer::class.java)
 
+
+
         button2.setOnClickListener {
             try {
                 Connect()
-                shared_preference.edit().putLong(PREFERENCE_VALUE, 90000).apply()
                 sendData("0")
-                startActivity(timerIntent)
             }catch (IOException: Exception){
                 showMessage("FAIL")
             }
+            shared_preference.edit().putLong(PREFERENCE_VALUE, 30000).apply()
+            shared_preference.edit().putString(getString(R.string.average_preferences), showerTimeText.text.toString()).commit()
+            startActivity(timerIntent)
         }
         button3.setOnClickListener {
             try {
@@ -60,6 +64,7 @@ class choose : AppCompatActivity() {
                 shared_preference.edit().putLong(PREFERENCE_VALUE, 300000).apply()
                 sendData("1")
                 startActivity(timerIntent)
+                shared_preference.edit().putString(getString(R.string.average_preferences), showerTimeText.text.toString()).commit()
             }catch (IOException: Exception){
                 showMessage("FAIL")
             }
@@ -70,6 +75,7 @@ class choose : AppCompatActivity() {
                 shared_preference.edit().putLong(PREFERENCE_VALUE, 600000).apply()
                 sendData("2")
                 startActivity(timerIntent)
+                shared_preference.edit().putString(getString(R.string.average_preferences), showerTimeText.text.toString()).commit()
             }catch (IOException: Exception){
                 showMessage("FAIL")
             }
@@ -80,6 +86,7 @@ class choose : AppCompatActivity() {
                 shared_preference.edit().putLong(PREFERENCE_VALUE, 900000).apply()
                 sendData("3")
                 startActivity(timerIntent)
+                shared_preference.edit().putString(getString(R.string.average_preferences), showerTimeText.text.toString()).commit()
             }catch (IOException: Exception){
                 showMessage("FAIL")
             }

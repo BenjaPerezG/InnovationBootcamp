@@ -17,6 +17,7 @@ class timer : AppCompatActivity() {
         val PREFERENCE_NAME: String = getString(R.string.settings_preferences)
         val PREFERENCE_VALUE: String = getString(R.string.timer_preferences)
         val shared_preference: SharedPreferences = getSharedPreferences(PREFERENCE_NAME, PRIVATE_MODE)
+        val liters_per_minute = 30
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
@@ -24,6 +25,7 @@ class timer : AppCompatActivity() {
         title = "Clean n' Green"
 
         val timer_start: Long = shared_preference.getLong(PREFERENCE_VALUE, 300000)
+        val average: String = shared_preference.getString(getString(R.string.average_preferences), "20").toString()
         timerText3.text = "${(timer_start / 1000)/60}:${((timer_start/1000)%60)/10}${((timer_start/1000)%60)%10}"
         val counter = object : CountDownTimer(timer_start, 1000) {
 
@@ -32,7 +34,7 @@ class timer : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                timerText3.text = "Ready!"
+                timerText4.text = "Ready! You saved ${liters_per_minute*(average.toInt() - (timer_start)/60000)}L of water!"
             }
         }
         counter.start()
