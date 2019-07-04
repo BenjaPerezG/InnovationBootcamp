@@ -51,12 +51,12 @@ class choose : AppCompatActivity() {
             try {
                 Connect()
                 sendData("0")
+                shared_preference.edit().putLong(PREFERENCE_VALUE, 180000).apply()
+                shared_preference.edit().putString(getString(R.string.average_preferences), showerTimeText.text.toString()).commit()
+                startActivity(timerIntent)
             }catch (IOException: Exception){
                 showMessage("FAIL")
             }
-            shared_preference.edit().putLong(PREFERENCE_VALUE, 30000).apply()
-            shared_preference.edit().putString(getString(R.string.average_preferences), showerTimeText.text.toString()).commit()
-            startActivity(timerIntent)
         }
         button3.setOnClickListener {
             try {
