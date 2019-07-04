@@ -21,6 +21,7 @@ class timer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
         setSupportActionBar(toolbar)
+        title = "Clean n' Green"
 
         val timer_start: Long = shared_preference.getLong(PREFERENCE_VALUE, 300000)
         timerText3.text = "${(timer_start / 1000)/60}:${((timer_start/1000)%60)/10}${((timer_start/1000)%60)%10}"
@@ -34,11 +35,7 @@ class timer : AppCompatActivity() {
                 timerText3.text = "Ready!"
             }
         }
-        startTimerButton.setOnClickListener { counter.start() }
-        /*fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }*/
+        counter.start()
     }
 
 }
